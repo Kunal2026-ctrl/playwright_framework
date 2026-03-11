@@ -174,9 +174,24 @@ git config --global user.email "hellolearninghub2026@gmail.com"
 git config --list
 git init
 git remote add origin https://github.com/Kunal2026-ctrl/playwright_framework
+git add .
+git commit -m "Initial playwright framework upload"
+git branch -M main
+git push -u origin main
 // repo are nothing but a folder in git HUB
 
 
+-------------------
+Clone Fetch, Pull
+git clone https://github.com/Kunal2026-ctrl/playwright_framework
+npx playwright install
+npx playwright test
+npx playwright test tests/LoginToSauceDemo.spec.js
+git add . or git add tests/smoke/
+git commit -m "Add this new note file"
+git push origin main
 
+M - Modified  --- file is already existing in git repo
+U - Means untracked  -- new file
 
 
