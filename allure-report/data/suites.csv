@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","14737","Validate check boxes in Amazon","","Tue Mar 10 15:29:19 IST 2026","passed","Tue Mar 10 15:29:34 IST 2026","","Checkboxes.spec.js","",""
+"","7493","Checkboxes Scenarios one","","Tue Mar 10 15:29:19 IST 2026","passed","Tue Mar 10 15:29:27 IST 2026","","Checkboxes.spec.js","",""

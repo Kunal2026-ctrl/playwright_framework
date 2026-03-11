@@ -1,0 +1,182 @@
+npx playwright test tests/<file-name>
+
+⚖️ Key Difference
+Getter form (locator.textContent()) → returns the actual string value.
+Assertion form (expect(locator).toHaveText("...") or regex) → verifies the text matches what you expect.
+
+✅ Summary:
+textContent() → get the text.
+textContent("A") → check text equals "A".
+textContent(/A/i) → check text matches regex (contains “A”, case‑insensitive).
+
+.all()  -- this method returns a promise that resolves to a list of all elements matching the locator.
+
+
+
+Drop dowm by 3 types
+1. Standard dropdown <Select Options>
+2. Custom dropdown  not using Select tag<>
+3. Searchable dropdown
+
+
+
+Mouse  action
+click
+double click or context click
+right click
+Hover over elements
+drag and drop
+scrolling with Mouse
+
+Keyboard action
+Press enter
+Type text
+ctrl A,C,V,X
+shift Key
+
+
+describe
+1. Feature or Module
+2. Test types - Functional, regression or smoke
+3. Based on Roles - admin, customer
+
+
+Hooks in Playwright 
+test.beforeAll(Async(){
+    //code you want to execute before all the tests  -- launch the browser
+})
+
+test.afterAll(Async(){
+    //code you want to execute after all the tests  - close the browser
+})
+
+test.beforeEach(Async(){
+    //code you want to execute before each tests  -- Launch URL
+})
+test.afterEach(Async(){
+    //code you want to execute after each tests  -- Completion
+})
+
+beforeAll  - Runs once before all tests
+afterAll - Runs once after all tests
+beforeEach = Runs before each tests
+afterEach - Runs after each tests
+
+
+-->
+Annotations are special methods in playwright, its lebel or instruction which tells what to execute and what not to
+test.describe -> Groups related tests
+test.skip -> skips the test, 
+test.only -> runs only this tests, ignores others
+
+test.fixme -> Marks a test as expected to fail, Temporarily ignoring a broken test
+test.slow -> marks a test as slow , running a slow test, (eg heavy UI interaction) 
+test.fail -> marking known bug as expected ti fail
+
+
+tags
+@smoke, @Regression, @ui, @api
+--grep "@Regression"
+
+
+Handling multiple windows or tabs
+syntax  
+const[newtab] = await promise.all([
+page.waitForEvent("Popup")
+page.click("locator")
+
+])
+
+const[newwindow] = await promise.all([
+context.waitForEvent("page")
+page.click("locator")
+
+])
+
+Page Object Model(POM) 
+
+Design pattern - Organize and manage web elements
+
+Advantages
+1. Better code organization
+2. Reusability
+3. Improved maintainance 
+4. Readability
+
+
+--retries=3(number of times --- command line)
+config file - retries:3  -- applies globally 
+syntax
+npx playwright test tests/LoginToSauceDemo.spec.js --retries =2
+
+---------------
+Terminal report
+dot
+line
+list
+
+
+------------------------------
+
+Allure report
+npm install -D allure-playwright
+['allure-playwright'],
+allure generate allure-results --clean -o allure-report
+allure open allure-report
+
+what is allure report in playwright
+In Playwright, Allure Report is a popular reporting framework that integrates with your test runs to produce rich, interactive reports. It’s not built into Playwright itself, but you can configure it with Playwright Test to get detailed insights into your automation results.
+
+🌟 What Allure Report Provides
+Visual test results: A web-based dashboard showing passed, failed, skipped tests.
+Step-by-step logs: Each action (like page.goto, click, fill) can be logged as a step.
+Screenshots & videos: Attachments for failed tests to help debugging.
+Metadata: Test duration, environment info, retries, parameters.
+History tracking: Compare results across multiple runs.
+
+⚙️ How It Works with Playwright
+1. Install Allure dependencies:
+
+bash
+npm install --save-dev allure-playwright
+npm install --save-dev allure-commandline
+
+2. Configure Playwright (playwright.config.js):
+
+js
+import { defineConfig } from '@playwright/test';
+
+export default defineConfig({
+  reporter: [
+    ['line'],
+    ['allure-playwright']
+  ],
+});
+
+
+3. Run tests:
+
+bash
+npx playwright test
+This generates raw Allure results in the allure-results folder.
+
+4. Generate the report:
+
+bash
+npx allure generate allure-results --clean -o allure-report
+npx allure open allure-report
+
+
+--------------------------
+Git HUB
+git config --global user.name "Kunal2026-ctrl"
+git config --global user.email "hellolearninghub2026@gmail.com"
+git config --list
+git init
+git remote add origin https://github.com/Kunal2026-ctrl/playwright_framework
+// repo are nothing but a folder in git HUB
+
+
+
+
+

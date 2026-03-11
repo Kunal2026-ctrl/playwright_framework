@@ -1,0 +1,2 @@
+Selecting Hardcover Verification Passed
+Enhanced loop closed and validation done
