@@ -171,28 +171,54 @@ npx allure open allure-report
 Git HUB
 git config --global user.name "Kunal2026-ctrl"
 git config --global user.email "hellolearninghub2026@gmail.com"
-git config --list
-git init
+git config --list  //Shows all current Git configurations (username, email, editor, etc.).
+git init  -- Initializes a new Git repository in the current folder.
 git remote add origin https://github.com/Kunal2026-ctrl/playwright_framework
-git add .
-git commit -m "Initial playwright framework upload"
-git branch -M main
-git push -u origin main
+git add .  //Stages all files in the folder for commit. Think of it as “mark these files to be saved.”
+git add . or git add tests/smoke/  --- Stage all changes (.) or just a specific folder (tests/smoke/).
+git commit -m "Initial playwright framework upload"  // Saves a snapshot of staged files with a message. The message should describe what you changed.
+git branch -M main  - //Renames the current branch to main. GitHub uses main as the default branch name.
+git push -u origin main  //Uploads your local commits to the remote GitHub repo. -u sets origin main as the default, so later you can just type git push.
 // repo are nothing but a folder in git HUB
 
 
 -------------------
-Clone Fetch, Pull
+for Clone Fetch, Pull
 git clone https://github.com/Kunal2026-ctrl/playwright_framework
 npx playwright install
 npx playwright test
 npx playwright test tests/LoginToSauceDemo.spec.js
 git add . or git add tests/smoke/
 git commit -m "Add this new note file"
-git push origin main
+git push origin main  -- 
 
 M - Modified  --- file is already existing in git repo
 U - Means untracked  -- new file
-vndkv
 
 
+git status 
+git fetch  -- it will bring all the new changes been made
+git pull -- give all the code to my local machine
+
+
+
+
+📊 
+Comparison
+Command                	             What it does	                                    When to use
+git push -u origin main	             Pushes branch and sets tracking	                First push of a new branch
+git push	                         Pushes to the tracked branch	                    Subsequent pushes after tracking is set
+
+
+✅ 
+Example Workflow
+You create a new repo and branch locally.
+
+First push:
+bash
+git push -u origin main
+→ This sets up tracking.
+
+Next time, you only need:
+bash
+git push
